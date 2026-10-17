@@ -1,0 +1,13 @@
+export const MOCK_DELAY_MS = 300;
+export const RSVP_DELAY_MS = 500;
+export const PAGE_SIZE = 12;
+export const MINIMUM_INTERESTS = 3;
+export const FEED_MINIMUM_SCORE = 20;
+export const MINUTE_MS = 60_000;
+export const HOUR_MS = 60 * MINUTE_MS;
+export const DAY_MS = 24 * HOUR_MS;
+export const QUERY_STALE_MS = MINUTE_MS;
+export const TOAST_DURATION_MS = 5_000;
+export const AI_TIMEOUT_MS = 4_000;
+export const RATE_LIMIT = 20;
+export const CACHE_TTL_MS = DAY_MS;

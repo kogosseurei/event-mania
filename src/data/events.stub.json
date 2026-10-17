@@ -1,0 +1,352 @@
+[
+  {
+    "id": "ev-001",
+    "title": "Campus Hackathon Kickoff",
+    "category": "tech",
+    "tags": [
+      "tech",
+      "gaming",
+      "entrepreneurship"
+    ],
+    "venueId": "engineering-lab-block",
+    "faculty": "Engineering",
+    "startOffsetMinutes": 1200,
+    "durationMinutes": 180,
+    "capacity": 120,
+    "registeredCount": 96,
+    "organizer": "Computing Society",
+    "coverPublicId": "events/tech-01",
+    "agenda": [
+      {
+        "offsetMinutes": 0,
+        "label": "Doors and registration"
+      },
+      {
+        "offsetMinutes": 30,
+        "label": "Opening keynote"
+      },
+      {
+        "offsetMinutes": 90,
+        "label": "Team formation"
+      },
+      {
+        "offsetMinutes": 150,
+        "label": "Challenge briefing"
+      }
+    ],
+    "description": "Meet your next team and turn a bold idea into something real. Get inspired by the opening keynote before exploring this year?s challenges."
+  },
+  {
+    "id": "ev-002",
+    "title": "Intro to Machine Learning Workshop",
+    "category": "tech",
+    "tags": [
+      "tech"
+    ],
+    "venueId": "library-atrium",
+    "faculty": "Engineering",
+    "startOffsetMinutes": 7200,
+    "durationMinutes": 120,
+    "capacity": 40,
+    "registeredCount": 40,
+    "organizer": "AI Study Group",
+    "coverPublicId": "events/tech-02",
+    "agenda": [
+      {
+        "offsetMinutes": 0,
+        "label": "Setup and laptop check"
+      },
+      {
+        "offsetMinutes": 20,
+        "label": "Core concepts"
+      },
+      {
+        "offsetMinutes": 70,
+        "label": "Hands-on notebook"
+      },
+      {
+        "offsetMinutes": 105,
+        "label": "Questions"
+      }
+    ],
+    "description": "Make sense of machine learning with a practical introduction led by students. Bring your laptop and leave with your first working notebook."
+  },
+  {
+    "id": "ev-003",
+    "title": "Inter-Faculty Football Final",
+    "category": "sports",
+    "tags": [
+      "sports"
+    ],
+    "venueId": "sports-complex",
+    "faculty": null,
+    "startOffsetMinutes": 4320,
+    "durationMinutes": 150,
+    "capacity": 500,
+    "registeredCount": 312,
+    "organizer": "Student Sports Council",
+    "coverPublicId": "events/sports-01",
+    "agenda": [
+      {
+        "offsetMinutes": 0,
+        "label": "Gates open"
+      },
+      {
+        "offsetMinutes": 30,
+        "label": "Pre-match ceremony"
+      },
+      {
+        "offsetMinutes": 45,
+        "label": "Kickoff"
+      },
+      {
+        "offsetMinutes": 135,
+        "label": "Trophy presentation"
+      }
+    ],
+    "description": "One campus, two teams, and a final to remember. Bring your friends and cheer your faculty on from the stands."
+  },
+  {
+    "id": "ev-004",
+    "title": "Open Mic Night",
+    "category": "music",
+    "tags": [
+      "music",
+      "arts"
+    ],
+    "venueId": "student-union-hall",
+    "faculty": null,
+    "startOffsetMinutes": 2880,
+    "durationMinutes": 180,
+    "capacity": 150,
+    "registeredCount": 112,
+    "organizer": "Music Society",
+    "coverPublicId": "events/music-01",
+    "agenda": [
+      {
+        "offsetMinutes": 0,
+        "label": "Doors open"
+      },
+      {
+        "offsetMinutes": 30,
+        "label": "Host welcome"
+      },
+      {
+        "offsetMinutes": 45,
+        "label": "Performances round one"
+      },
+      {
+        "offsetMinutes": 120,
+        "label": "Performances round two"
+      }
+    ],
+    "description": "Your stage, your voice, your people. Discover original songs, spoken word, and unexpected talent in a relaxed student showcase."
+  },
+  {
+    "id": "ev-005",
+    "title": "Career Fair",
+    "category": "careers",
+    "tags": [
+      "careers",
+      "entrepreneurship"
+    ],
+    "venueId": "main-auditorium",
+    "faculty": null,
+    "startOffsetMinutes": 12960,
+    "durationMinutes": 360,
+    "capacity": 600,
+    "registeredCount": 340,
+    "organizer": "Careers Office",
+    "coverPublicId": "events/careers-01",
+    "agenda": [
+      {
+        "offsetMinutes": 0,
+        "label": "Employer booths open"
+      },
+      {
+        "offsetMinutes": 90,
+        "label": "Panel on first job lessons"
+      },
+      {
+        "offsetMinutes": 180,
+        "label": "CV drop-in"
+      },
+      {
+        "offsetMinutes": 300,
+        "label": "Closing networking"
+      }
+    ],
+    "description": "Start a conversation that could shape your next chapter. Meet employers, explore internships, and get practical advice from recent graduates."
+  },
+  {
+    "id": "ev-006",
+    "title": "CV Clinic with Alumni",
+    "category": "careers",
+    "tags": [
+      "careers"
+    ],
+    "venueId": "library-atrium",
+    "faculty": "Business",
+    "startOffsetMinutes": 5760,
+    "durationMinutes": 120,
+    "capacity": 60,
+    "registeredCount": 52,
+    "organizer": "Alumni Relations",
+    "coverPublicId": "events/careers-02",
+    "agenda": [
+      {
+        "offsetMinutes": 0,
+        "label": "Welcome"
+      },
+      {
+        "offsetMinutes": 15,
+        "label": "One-to-one reviews round one"
+      },
+      {
+        "offsetMinutes": 75,
+        "label": "Reviews round two"
+      },
+      {
+        "offsetMinutes": 105,
+        "label": "Wrap up"
+      }
+    ],
+    "description": "Give your CV a fresh perspective with one-to-one alumni feedback. Bring a draft and leave with clear next steps for your next application."
+  },
+  {
+    "id": "ev-007",
+    "title": "Chess and Debate Mixer",
+    "category": "clubs",
+    "tags": [
+      "clubs",
+      "gaming"
+    ],
+    "venueId": "library-atrium",
+    "faculty": "Arts and Humanities",
+    "startOffsetMinutes": 2940,
+    "durationMinutes": 120,
+    "capacity": 80,
+    "registeredCount": 35,
+    "organizer": "Chess Club and Debate Society",
+    "coverPublicId": "events/clubs-01",
+    "agenda": [
+      {
+        "offsetMinutes": 0,
+        "label": "Open play"
+      },
+      {
+        "offsetMinutes": 45,
+        "label": "Demo debate"
+      },
+      {
+        "offsetMinutes": 90,
+        "label": "Mini tournament"
+      }
+    ],
+    "description": "Good moves and great conversations belong together. Join a friendly game, watch a lively debate, and meet the people behind two campus societies."
+  },
+  {
+    "id": "ev-008",
+    "title": "Photography Walk",
+    "category": "arts",
+    "tags": [
+      "arts",
+      "wellness"
+    ],
+    "venueId": "amphitheatre",
+    "faculty": "Arts and Humanities",
+    "startOffsetMinutes": 10080,
+    "durationMinutes": 120,
+    "capacity": 30,
+    "registeredCount": 18,
+    "organizer": "Photo Society",
+    "coverPublicId": "events/arts-01",
+    "agenda": [
+      {
+        "offsetMinutes": 0,
+        "label": "Meet at the amphitheatre"
+      },
+      {
+        "offsetMinutes": 15,
+        "label": "Composition tips"
+      },
+      {
+        "offsetMinutes": 45,
+        "label": "Guided walk"
+      },
+      {
+        "offsetMinutes": 100,
+        "label": "Share and feedback"
+      }
+    ],
+    "description": "See familiar corners of campus through a new lens. Bring a camera or your phone for a relaxed walk with composition tips and friendly feedback."
+  },
+  {
+    "id": "ev-009",
+    "title": "Jazz Evening",
+    "category": "music",
+    "tags": [
+      "music"
+    ],
+    "venueId": "amphitheatre",
+    "faculty": null,
+    "startOffsetMinutes": 17280,
+    "durationMinutes": 150,
+    "capacity": 200,
+    "registeredCount": 90,
+    "organizer": "Music Society",
+    "coverPublicId": "events/music-02",
+    "agenda": [
+      {
+        "offsetMinutes": 0,
+        "label": "Seating"
+      },
+      {
+        "offsetMinutes": 20,
+        "label": "Student quartet"
+      },
+      {
+        "offsetMinutes": 70,
+        "label": "Guest set"
+      },
+      {
+        "offsetMinutes": 130,
+        "label": "Jam session"
+      }
+    ],
+    "description": "Settle in for an open-air evening of live jazz. Student musicians and a guest ensemble share the stage before an informal closing jam."
+  },
+  {
+    "id": "ev-010",
+    "title": "Campus 5K Fun Run",
+    "category": "sports",
+    "tags": [
+      "sports",
+      "wellness",
+      "volunteering"
+    ],
+    "venueId": "sports-complex",
+    "faculty": null,
+    "startOffsetMinutes": -2880,
+    "durationMinutes": 90,
+    "capacity": 200,
+    "registeredCount": 180,
+    "organizer": "Wellness Club",
+    "coverPublicId": "events/sports-02",
+    "agenda": [
+      {
+        "offsetMinutes": 0,
+        "label": "Warm up"
+      },
+      {
+        "offsetMinutes": 15,
+        "label": "Run start"
+      },
+      {
+        "offsetMinutes": 75,
+        "label": "Finish line refreshments"
+      }
+    ],
+    "description": "Move at your own pace and enjoy a friendly five kilometres around campus. Runners, walkers, and volunteers are all welcome at the finish line."
+  }
+]
