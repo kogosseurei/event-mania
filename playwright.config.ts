@@ -1,0 +1,3 @@
+import { defineConfig } from '@playwright/test';
+const sizes=[[320,640],[360,800],[390,844],[768,1024],[1024,768],[1280,800],[1536,864]] as const;
+export default defineConfig({testDir:'./tests/e2e',fullyParallel:true,workers:2,retries:process.env.CI?1:0,timeout:60000,expect:{timeout:10000},reporter:[['list'],['html',{open:'never'}]],use:{baseURL:process.env.BASE_URL??'http://localhost:3100',trace:'retain-on-failure',screenshot:'only-on-failure',reducedMotion:'reduce'},projects:sizes.map(([width,height])=>({name:`${width}x${height}`,use:{viewport:{width,height},isMobile:width<768,hasTouch:width<=1024}})),...(process.env.BASE_URL?{}:{webServer:{command:'npm run start -- --port 3100',url:'http://localhost:3100',reuseExistingServer:true,timeout:120000}})});
