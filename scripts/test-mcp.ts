@@ -1,0 +1,10 @@
+import { Client } from '@modelcontextprotocol/sdk/client/index.js';
+import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
+import { z } from 'zod';
+import { logger } from '../src/lib/logger';
+const endpoint=process.env.MCP_URL??'http://localhost:3000/api/mcp';
+const client=new Client({name:'campus-events-verifier',version:'1.0.0'});
+const cases=[{name:'search_events',arguments:{category:'music',limit:2}},{name:'get_event',arguments:{id:'ev-004'}},{name:'recommend_events',arguments:{interests:['tech','music','arts'],limit:3}},{name:'list_venues',arguments:{}},{name:'list_categories',arguments:{}}];
+// SDK 1.x exposes sessionId as undefined while Transport declares it optional; runtime contracts match.
+async function verify():Promise<void> {await client.connect(new StreamableHTTPClientTransport(new URL(endpoint)) as unknown as Parameters<Client['connect']>[0]);try{const listed=await client.listTools();if(listed.tools.length!==5)throw new Error('Expected exactly five tools');for(const example of cases){const result=await client.callTool(example);if(result.isError)throw new Error(`${example.name} returned an error`);const content=z.array(z.object({type:z.literal('text'),text:z.string()})).parse(result.content);const parsed:unknown=JSON.parse(content[0]?.text??'null');if(!parsed||typeof parsed!=='object')throw new Error('Expected JSON object or array');logger.info(`PASS ${example.name}`);}let invalid=false;try{const result=await client.callTool({name:'search_events',arguments:{limit:99}});invalid=Boolean(result.isError);}catch{invalid=true;}if(!invalid)throw new Error('Invalid input was accepted');const unknown=await client.callTool({name:'get_event',arguments:{id:'missing'}});if(!unknown.isError)throw new Error('Unknown event was accepted');logger.info('MCP integration passed');}finally{await client.close();}}
+verify().catch((error:unknown)=>{logger.error('MCP integration failed',error);process.exitCode=1;});

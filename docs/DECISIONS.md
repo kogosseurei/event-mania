@@ -7,3 +7,5 @@
 - The MCP 1.1 adapter pins SDK 1.26.0 as its exact peer dependency; both are pinned together instead of bypassing npm compatibility checks.
 - Local in-memory cache and rate limits are bounded per instance. A distributed store is needed for cross-instance quotas.
 - The browser connector reported no available browser. The explicitly requested Playwright suite remains the automated browser verification path.
+
+- Superseding the initial adapter choice: npm audit found an advisory in the SDK pinned by mcp-handler 1.x. Phase 14 uses mcp-handler 2.3 and its SDK 2 server, with patched SDK 1.32 for the requested integration client. The URL is still /api/mcp; obsolete basePath options are omitted because routing now determines the endpoint.
