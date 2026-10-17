@@ -19,3 +19,5 @@ export * from './EventDetailLayout';
 export * from './EventDetailScreen';
 
 export * from './MyEventsScreen';
+
+export * from './RsvpButtonView';

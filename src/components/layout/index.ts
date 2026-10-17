@@ -6,3 +6,5 @@ export * from './PageContainer';
 export * from './PageHeader';
 export * from './ResponsiveGrid';
 export * from './StickyActionBar';
+
+export * from './LayoutReview';

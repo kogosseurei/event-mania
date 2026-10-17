@@ -1,3 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import { publicEnvironmentSchema, serverEnvironmentSchema } from '@/lib/env';
-describe('environment', () => { it('works without credentials', () => { expect(serverEnvironmentSchema.parse({}).GEMINI_API_KEY).toBeUndefined(); }); it('rejects invalid URLs', () => { expect(publicEnvironmentSchema.safeParse({ NEXT_PUBLIC_APP_URL: 'invalid' }).success).toBe(false); }); });
+describe('environment', () => {
+  it('works without credentials', () => {
+    expect(serverEnvironmentSchema.parse({}).GEMINI_API_KEY).toBeUndefined();
+  });
+  it('rejects invalid URLs', () => {
+    expect(publicEnvironmentSchema.safeParse({ NEXT_PUBLIC_APP_URL: 'invalid' }).success).toBe(
+      false,
+    );
+  });
+});

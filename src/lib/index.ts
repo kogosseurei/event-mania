@@ -7,3 +7,6 @@ export * from './cn';
 export * from './rsvp';
 export * from './ics';
 export * from './share';
+
+export * from './cloudinary';
+export * from './breakpoints';

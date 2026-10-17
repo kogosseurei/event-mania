@@ -1,6 +1,33 @@
 import Link from 'next/link';
 import type { ReactElement } from 'react';
-import { GraduationCap, ArrowUpRight, Sparkles, CircleHelp } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 import { university } from '@/config';
 import { NavigationLinks } from './NavigationLinks';
-export function Sidebar():ReactElement {return <aside className="sidebar"><Link href="/" className="brand"><span className="brand-mark"><GraduationCap size={25}/></span><span>campus<span className="brand-dot">.</span><small>EVENTS & EXPERIENCES</small></span></Link><div className="university-label"><span className="university-avatar">{university.shortName}</span><div>{university.name}<small>Your campus, connected</small></div></div><span className="nav-caption">DISCOVER</span><nav aria-label="Desktop navigation"><NavigationLinks/></nav><div className="sidebar-bottom"><div className="campus-note"><Sparkles size={22}/><h3>More than a timetable.</h3><p>Find your people. Try something new. Make it your campus.</p><Link href="/browse">Explore what’s on <ArrowUpRight size={15}/></Link></div><Link className="support-link" href="/mcp"><CircleHelp size={18}/> Connect your AI assistant</Link><div className="sidebar-footer"><span className="status-dot"/> Made for campus life</div></div></aside>;}
+import { CampusNote } from './CampusNote';
+export function Sidebar(): ReactElement {
+  return (
+    <aside className="sidebar">
+      <Link href="/" className="brand">
+        <span className="brand-mark">
+          <GraduationCap size={25} />
+        </span>
+        <span>
+          campus<span className="brand-dot">.</span>
+          <small>EVENTS & EXPERIENCES</small>
+        </span>
+      </Link>
+      <div className="university-label">
+        <span className="university-avatar">{university.shortName}</span>
+        <div>
+          {university.name}
+          <small>Your campus, connected</small>
+        </div>
+      </div>
+      <span className="nav-caption">DISCOVER</span>
+      <nav aria-label="Desktop navigation">
+        <NavigationLinks />
+      </nav>
+      <CampusNote />
+    </aside>
+  );
+}

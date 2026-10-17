@@ -1,2 +1,5 @@
 import { RSVP_DELAY_MS } from '@/config';
-export async function simulateRsvp(shouldFail:boolean=false):Promise<void> {await new Promise((resolve)=>setTimeout(resolve,RSVP_DELAY_MS));if(shouldFail)throw new Error('Unable to reserve a place. Please try again.');}
+export async function simulateRsvp(shouldFail: boolean = false): Promise<void> {
+  await new Promise((resolve) => setTimeout(resolve, RSVP_DELAY_MS));
+  if (shouldFail) throw new Error('Unable to reserve a place. Please try again.');
+}

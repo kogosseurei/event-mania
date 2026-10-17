@@ -2,5 +2,21 @@ import type { ReactElement } from 'react';
 import { X } from 'lucide-react';
 import type { EventFilters } from '@/types';
 import { Chip } from '@/components/ui';
-export interface ActiveFilterChipsProps {filters:EventFilters;onChange(value:Partial<EventFilters>):void}
-export function ActiveFilterChips({filters,onChange}:ActiveFilterChipsProps):ReactElement {return <div className="active-filters">{filters.query&&<Chip selected onClick={()=>onChange({query:''})}>{filters.query}<X size={12}/></Chip>}{filters.categories.map((category)=><Chip key={category} selected onClick={()=>onChange({categories:filters.categories.filter((value)=>value!==category)})}>{category}<X size={12}/></Chip>)}{filters.venueIds.map((venue)=><Chip key={venue} selected onClick={()=>onChange({venueIds:filters.venueIds.filter((value)=>value!==venue)})}>{venue.replaceAll('-',' ')}<X size={12}/></Chip>)}{filters.datePreset!=='any'&&<Chip selected onClick={()=>onChange({datePreset:'any',from:undefined,to:undefined})}>{filters.datePreset}<X size={12}/></Chip>}</div>;}
+import { useActiveFilters } from '@/hooks';
+export interface ActiveFilterChipsProps {
+  filters: EventFilters;
+  onChange(value: Partial<EventFilters>): void;
+}
+export function ActiveFilterChips({ filters, onChange }: ActiveFilterChipsProps): ReactElement {
+  const chips = useActiveFilters(filters, onChange);
+  return (
+    <div className="active-filters">
+      {chips.map((chip) => (
+        <Chip key={chip.id} selected onClick={chip.remove}>
+          {chip.label}
+          <X size={12} />
+        </Chip>
+      ))}
+    </div>
+  );
+}

@@ -6,7 +6,69 @@ import { simulateRsvp } from '@/api';
 import type { CampusEvent, RsvpRecord } from '@/types';
 import { useRsvpHydrated } from './useHasHydrated';
 import { useEvent } from './useEvent';
-export interface RsvpBehavior {state:RsvpState;label:string;disabled:boolean;onPress():Promise<void>;conflictingEvent:RsvpRecord|undefined}
-const labels:Record<RsvpState,string>={idle:'RSVP · Save me a spot',pending:'Reserving your place…',going:'Going, tap to cancel',full:'Event full',conflict:'Clashes with another event',past:'Event ended'};
-export function useRsvp(id:string):RsvpBehavior {const {data:event}=useEvent(id);const hydrated=useRsvpHydrated();const records=useRsvpStore((state)=>state.records);const [pending,setPending]=useState(false);const locked=useRef(false);const entries=Object.values(records);const state=event&&hydrated?getRsvpState(event,entries,pending):'pending';const conflict=event?findConflict(event,entries):undefined;return {state,label:state==='conflict'?`Clashes with ${conflict?.title??'another event'}`:labels[state],disabled:!hydrated||!event||['pending','full','conflict','past'].includes(state),conflictingEvent:conflict,onPress:async()=>{if(!event||locked.current||(!records[id]&&!canRsvp(event,entries)))return;locked.current=true;setPending(true);const previous=records[id];applyOptimistic(event,previous);try{await simulateRsvp();useToastStore.getState().push({message:previous?'RSVP cancelled':'You’re going! See you there.',tone:'success'});}catch{if(previous)useRsvpStore.getState().add(previous);else useRsvpStore.getState().remove(id);useToastStore.getState().push({message:'Could not update your RSVP. Please try again.',tone:'error'});}finally{locked.current=false;setPending(false);}}};}
-function applyOptimistic(event:CampusEvent,previous:RsvpRecord|undefined):void {if(previous)useRsvpStore.getState().remove(event.id);else useRsvpStore.getState().add({eventId:event.id,title:event.title,startTime:event.startTime,endTime:event.endTime,createdAt:new Date().toISOString()});}
+export interface RsvpBehavior {
+  state: RsvpState;
+  label: string;
+  disabled: boolean;
+  onPress(): Promise<void>;
+  conflictingEvent: RsvpRecord | undefined;
+}
+const labels: Record<RsvpState, string> = {
+  idle: 'RSVP · Save me a spot',
+  pending: 'Reserving your place…',
+  going: 'Going, tap to cancel',
+  full: 'Event full',
+  conflict: 'Clashes with another event',
+  past: 'Event ended',
+};
+export function useRsvp(id: string): RsvpBehavior {
+  const { data: event } = useEvent(id);
+  const hydrated = useRsvpHydrated();
+  const records = useRsvpStore((state) => state.records);
+  const [pending, setPending] = useState(false);
+  const locked = useRef(false);
+  const entries = Object.values(records);
+  const state = event && hydrated ? getRsvpState(event, entries, pending) : 'pending';
+  const conflict = event ? findConflict(event, entries) : undefined;
+  return {
+    state,
+    label:
+      state === 'conflict' ? `Clashes with ${conflict?.title ?? 'another event'}` : labels[state],
+    disabled: !hydrated || !event || ['pending', 'full', 'conflict', 'past'].includes(state),
+    conflictingEvent: conflict,
+    onPress: async () => {
+      if (!event || locked.current || (!records[id] && !canRsvp(event, entries))) return;
+      locked.current = true;
+      setPending(true);
+      const previous = records[id];
+      applyOptimistic(event, previous);
+      try {
+        await simulateRsvp();
+        useToastStore.getState().push({
+          message: previous ? 'RSVP cancelled' : 'You’re going! See you there.',
+          tone: 'success',
+        });
+      } catch {
+        if (previous) useRsvpStore.getState().add(previous);
+        else useRsvpStore.getState().remove(id);
+        useToastStore
+          .getState()
+          .push({ message: 'Could not update your RSVP. Please try again.', tone: 'error' });
+      } finally {
+        locked.current = false;
+        setPending(false);
+      }
+    },
+  };
+}
+function applyOptimistic(event: CampusEvent, previous: RsvpRecord | undefined): void {
+  if (previous) useRsvpStore.getState().remove(event.id);
+  else
+    useRsvpStore.getState().add({
+      eventId: event.id,
+      title: event.title,
+      startTime: event.startTime,
+      endTime: event.endTime,
+      createdAt: new Date().toISOString(),
+    });
+}

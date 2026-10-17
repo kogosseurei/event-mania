@@ -1,5 +1,51 @@
-'use client';
-import { useState, type ReactElement } from 'react';
-import { Button, Badge, Chip, Skeleton, ProgressBar, Section, BottomSheet, Toaster, CloudImage } from '@/components/ui';
-import { useToastStore } from '@/stores';
-export default function Design():ReactElement {const [open,setOpen]=useState(false);const push=useToastStore((state)=>state.push);return <main id="main" className="page-container"><h1>Design system</h1><p>Campus Events · components and states</p><Section title="Buttons"><div className="flow"><Button>Primary</Button><Button variant="secondary">Secondary</Button><Button variant="ghost">Ghost</Button><Button variant="danger">Danger</Button><Button loading>Loading</Button></div></Section><Section title="Chips and badges"><div className="flow"><Chip selected>Technology</Chip><Chip>Sports</Chip><Badge tone="success">92% match</Badge><Badge tone="warning">Nearly full</Badge></div></Section><Section title="Loading and progress"><Skeleton shape="block"/><ProgressBar value={75} label="75 percent full"/></Section><Section title="Artwork"><CloudImage publicId="events/tech-01" alt="Technology event artwork"/></Section><Section title="Overlays"><div className="flow"><Button onClick={()=>setOpen(true)}>Open sheet</Button><Button onClick={()=>push({message:'Event saved',tone:'success',actionLabel:'Undo',onAction:()=>push({message:'Save undone',tone:'info'})})}>Show toast</Button></div></Section><BottomSheet open={open} onClose={()=>setOpen(false)} title="A little more detail"><p>Accessible sheet with native focus management.</p><Button onClick={()=>setOpen(false)}>Done</Button></BottomSheet><Toaster/></main>;}
+import type { ReactElement } from 'react';
+import {
+  Button,
+  Badge,
+  Chip,
+  Skeleton,
+  ProgressBar,
+  Section,
+  Toaster,
+  IconButton,
+} from '@/components/ui';
+import { Heart } from 'lucide-react';
+import { EventGallery } from './EventGallery';
+import { FallbackGallery } from './FallbackGallery';
+import { OverlayGallery } from './OverlayGallery';
+export default function Design(): ReactElement {
+  return (
+    <main id="main" className="page-container">
+      <h1>Design system</h1>
+      <p>Campus Events · components and states</p>
+      <Section title="Buttons">
+        <div className="flow">
+          <Button>Primary</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="ghost">Ghost</Button>
+          <Button variant="danger">Danger</Button>
+          <Button loading>Loading</Button>
+          <IconButton aria-label="Example save control">
+            <Heart size={18} />
+          </IconButton>
+        </div>
+      </Section>
+      <Section title="Chips and badges">
+        <div className="flow">
+          <Chip selected>Technology</Chip>
+          <Chip>Sports</Chip>
+          <Badge tone="success">92% match</Badge>
+          <Badge tone="warning">Nearly full</Badge>
+        </div>
+      </Section>
+      <Section title="Loading and progress">
+        <Skeleton shape="block" />
+        <ProgressBar value={75} label="75 percent full" />
+      </Section>
+      <EventGallery />
+      <OverlayGallery />
+      <FallbackGallery />
+      <Toaster />
+    </main>
+  );
+}

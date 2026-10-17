@@ -3,11 +3,7 @@
     "id": "ev-001",
     "title": "Campus Hackathon Kickoff",
     "category": "tech",
-    "tags": [
-      "tech",
-      "gaming",
-      "entrepreneurship"
-    ],
+    "tags": ["tech", "gaming", "entrepreneurship"],
     "venueId": "engineering-lab-block",
     "faculty": "Engineering",
     "startOffsetMinutes": 1200,
@@ -40,9 +36,7 @@
     "id": "ev-002",
     "title": "Intro to Machine Learning Workshop",
     "category": "tech",
-    "tags": [
-      "tech"
-    ],
+    "tags": ["tech"],
     "venueId": "library-atrium",
     "faculty": "Engineering",
     "startOffsetMinutes": 7200,
@@ -75,9 +69,7 @@
     "id": "ev-003",
     "title": "Inter-Faculty Football Final",
     "category": "sports",
-    "tags": [
-      "sports"
-    ],
+    "tags": ["sports"],
     "venueId": "sports-complex",
     "faculty": null,
     "startOffsetMinutes": 4320,
@@ -110,10 +102,7 @@
     "id": "ev-004",
     "title": "Open Mic Night",
     "category": "music",
-    "tags": [
-      "music",
-      "arts"
-    ],
+    "tags": ["music", "arts"],
     "venueId": "student-union-hall",
     "faculty": null,
     "startOffsetMinutes": 2880,
@@ -146,10 +135,7 @@
     "id": "ev-005",
     "title": "Career Fair",
     "category": "careers",
-    "tags": [
-      "careers",
-      "entrepreneurship"
-    ],
+    "tags": ["careers", "entrepreneurship"],
     "venueId": "main-auditorium",
     "faculty": null,
     "startOffsetMinutes": 12960,
@@ -182,9 +168,7 @@
     "id": "ev-006",
     "title": "CV Clinic with Alumni",
     "category": "careers",
-    "tags": [
-      "careers"
-    ],
+    "tags": ["careers"],
     "venueId": "library-atrium",
     "faculty": "Business",
     "startOffsetMinutes": 5760,
@@ -217,10 +201,7 @@
     "id": "ev-007",
     "title": "Chess and Debate Mixer",
     "category": "clubs",
-    "tags": [
-      "clubs",
-      "gaming"
-    ],
+    "tags": ["clubs", "gaming"],
     "venueId": "library-atrium",
     "faculty": "Arts and Humanities",
     "startOffsetMinutes": 2940,
@@ -249,10 +230,7 @@
     "id": "ev-008",
     "title": "Photography Walk",
     "category": "arts",
-    "tags": [
-      "arts",
-      "wellness"
-    ],
+    "tags": ["arts", "wellness"],
     "venueId": "amphitheatre",
     "faculty": "Arts and Humanities",
     "startOffsetMinutes": 10080,
@@ -285,9 +263,7 @@
     "id": "ev-009",
     "title": "Jazz Evening",
     "category": "music",
-    "tags": [
-      "music"
-    ],
+    "tags": ["music"],
     "venueId": "amphitheatre",
     "faculty": null,
     "startOffsetMinutes": 17280,
@@ -320,11 +296,7 @@
     "id": "ev-010",
     "title": "Campus 5K Fun Run",
     "category": "sports",
-    "tags": [
-      "sports",
-      "wellness",
-      "volunteering"
-    ],
+    "tags": ["sports", "wellness", "volunteering"],
     "venueId": "sports-complex",
     "faculty": null,
     "startOffsetMinutes": -2880,

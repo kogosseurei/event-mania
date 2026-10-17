@@ -1,7 +1,11 @@
 name: Checks
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  deployment_status:
 jobs:
   check:
+    if: github.event_name != 'deployment_status'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -12,3 +16,29 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm run build
+  preview:
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && github.event.deployment.environment != 'Production'
+    runs-on: ubuntu-latest
+    env:
+      BASE_URL: ${{ github.event.deployment_status.environment_url }}
+      MCP_URL: ${{ github.event.deployment_status.environment_url }}/api/mcp
+      VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:mcp
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: preview-browser-report
+          path: |
+            playwright-report/
+            test-results/
