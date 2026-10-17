@@ -1,0 +1,5 @@
+import type { CampusEvent } from '@/types';
+function escapeText(value:string):string {return value.replace(/\\/g,'\\\\').replace(/\r?\n/g,'\\n').replace(/;/g,'\\;').replace(/,/g,'\\,');}
+function timestamp(value:string):string {return new Date(value).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');}
+export function foldCalendarLine(value:string):string {const lines:string[]=[];let line='';let bytes=0;for(const character of value){const length=new TextEncoder().encode(character).length;if(bytes+length>75){lines.push(line);line=' ';bytes=1;}line+=character;bytes+=length;}lines.push(line);return lines.join('\r\n');}
+export function buildIcs(event:CampusEvent,venue:string,now:string=new Date().toISOString()):string {return ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Campus Events//EN','CALSCALE:GREGORIAN','BEGIN:VEVENT',`UID:${event.id}@campus-events`,`DTSTAMP:${timestamp(now)}`,`DTSTART:${timestamp(event.startTime)}`,`DTEND:${timestamp(event.endTime)}`,`SUMMARY:${escapeText(event.title)}`,`DESCRIPTION:${escapeText(event.description)}`,`LOCATION:${escapeText(venue)}`,'END:VEVENT','END:VCALENDAR'].map(foldCalendarLine).join('\r\n')+'\r\n';}
