@@ -1,0 +1,1 @@
+export const weights = { category: 45, tag: 15, tagCap: 35, proximity: 10, faculty: 10, proximityWindow: 7 * 86_400_000, maximum: 100 } as const;
