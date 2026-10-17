@@ -4,3 +4,6 @@
 - No authentication service is specified. Preferences and mock registrations belong to this browser and are not authoritative university registrations.
 - MCP handler 1.x will be used with the requested SDK 1.x and basePath API. Current handler 2.x removes that API and requires SDK 2.x.
 - The smart model requested in the brief remains configurable. Availability is account-dependent and errors must fall back.
+- The MCP 1.1 adapter pins SDK 1.26.0 as its exact peer dependency; both are pinned together instead of bypassing npm compatibility checks.
+- Local in-memory cache and rate limits are bounded per instance. A distributed store is needed for cross-instance quotas.
+- The browser connector reported no available browser. The explicitly requested Playwright suite remains the automated browser verification path.
