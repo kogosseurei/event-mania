@@ -17,3 +17,5 @@ export * from './AgendaTimeline';
 export * from './VenueCard';
 export * from './EventDetailLayout';
 export * from './EventDetailScreen';
+
+export * from './MyEventsScreen';
