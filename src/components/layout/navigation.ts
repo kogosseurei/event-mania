@@ -1,0 +1,2 @@
+import { Compass, CalendarDays, SlidersHorizontal, LayoutGrid } from 'lucide-react';
+export const navigationItems=[{href:'/',label:'For you',icon:Compass},{href:'/browse',label:'Browse events',icon:LayoutGrid},{href:'/my-events',label:'My events',icon:CalendarDays},{href:'/profile/interests',label:'My interests',icon:SlidersHorizontal}];
