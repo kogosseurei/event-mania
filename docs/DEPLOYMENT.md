@@ -10,16 +10,16 @@ In Cloudinary Media Library, upload your event and venue photos as publicly deli
 
 | Photo                              | Full Public ID                 |
 | ---------------------------------- | ------------------------------ |
-| Campus Hackathon Kickoff           | `events/tech-01`               |
-| Intro to Machine Learning Workshop | `events/tech-02`               |
-| Inter-Faculty Football Final       | `events/sports-01`             |
-| Open Mic Night                     | `events/music-01`              |
-| Career Fair                        | `events/careers-01`            |
-| CV Clinic with Alumni              | `events/careers-02`            |
-| Chess and Debate Mixer             | `events/clubs-01`              |
-| Photography Walk                   | `events/arts-01`               |
-| Jazz Evening                       | `events/music-02`              |
-| Campus 5K Fun Run                  | `events/sports-02`             |
+| Campus Hackathon Kickoff           | `tech-01`                      |
+| Intro to Machine Learning Workshop | `tech-02`                      |
+| Inter-Faculty Football Final       | `sports-01`                    |
+| Open Mic Night                     | `music-01`                     |
+| Career Fair                        | `careers-01`                   |
+| CV Clinic with Alumni              | `careers-02`                   |
+| Chess and Debate Mixer             | `clubs-01`                     |
+| Photography Walk                   | `arts-01`                      |
+| Jazz Evening                       | `music-02`                     |
+| Campus 5K Fun Run                  | `sports-02`                    |
 | Main Auditorium                    | `venues/main-auditorium`       |
 | Engineering Lab Block              | `venues/engineering-lab-block` |
 | Sports Complex                     | `venues/sports-complex`        |

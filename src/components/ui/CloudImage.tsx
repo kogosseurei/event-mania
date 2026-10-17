@@ -17,7 +17,7 @@ export function CloudImage({
   sizes = imageSizes,
   priority = false,
 }: CloudImageProps): ReactElement {
-  const category = publicId.split('/')[1]?.split('-')[0] ?? 'tech';
+  const category = publicId.split('/').at(-1)?.split('-')[0] ?? 'tech';
   return (
     <div className={`cloud-image aspect-${aspect} artwork-${category}`}>
       {cloudinaryCloudName ? (
